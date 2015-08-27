@@ -2,7 +2,7 @@
 ### Jianfeng Chen
 
 1. Repo directory tree
-   ![repo](image/directories.png)
+   <img src="image/directories.png" width = 300>
 
 2. Python, pip and easy_install
    ![repo](image/pythonversion.png)
