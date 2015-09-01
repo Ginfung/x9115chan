@@ -5,7 +5,7 @@
 See the source code at think3.py The screenshots are shown as follows.
 
 ### Exercise 3.1
-<img src="screenshots/e3.1.png" width="600"
+<img src="screenshots/e3.1.png" width="600">
 
 ### Exercise 3.2
 <img src="screenshots/e3.2.png" width="600">
