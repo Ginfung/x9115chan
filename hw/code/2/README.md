@@ -5,13 +5,13 @@
 See the source code at think3.py The screenshots are shown as follows.
 
 ### Exercise 3.1
-<img src="screenshots/e3.1.png" width="300">
+<img src="screenshots/e3.1.png" width="600"
 
 ### Exercise 3.2
-![exercise 3.2](screenshots/e3.2.png = 300x)
+<img src="screenshots/e3.2.png" width="600">
 
 ### Exercise 3.3
-![exercise 3.3](screenshots/e3.3.png = 300x)
+<img src="screenshots/e3.3.png" width="600">
 
 ### Exercise 3.4
 ![exercise 3.4.1](screenshots/e3.4.1.png)
