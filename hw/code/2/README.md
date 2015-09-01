@@ -5,7 +5,7 @@
 See the source code at think3.py The screenshots are shown as follows.
 
 ### Exercise 3.1
-![exercise 3.1](screenshots/e3.1.png = 300x)
+<img src="screenshots/e3.1.png" width="300">
 
 ### Exercise 3.2
 ![exercise 3.2](screenshots/e3.2.png = 300x)
