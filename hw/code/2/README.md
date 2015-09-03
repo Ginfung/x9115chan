@@ -20,3 +20,10 @@ See the source code at think3.py The screenshots are shown as follows.
 
 ### Exercise 3.5
 ![exercise 3.5](screenshots/e3.5.png)
+
+
+## Exercise for chapter 4
+
+See the source code at think4.py The screenshots are shown as follows.
+<img src="screenshots/e4.1.png" width="800">
+<img src="screenshots/e4.2.png" width="800">
