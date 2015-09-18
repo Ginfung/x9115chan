@@ -5,8 +5,8 @@ import math
 import sys
 
 pdb.set_trace = lambda: None
-x_l = int(-1e2)
-x_u = int(1e2)
+x_l = int(-1e5)
+x_u = int(1e5)
 x = lambda:randrange(x_l,x_u)
 seed(200065465) # set up the seed for random func
 
@@ -86,3 +86,4 @@ def main():
 
 if __name__ == '__main__':
     main()
+

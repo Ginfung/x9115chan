@@ -1,5 +1,6 @@
 from swampy.TurtleWorld import *
 import math
+import numpy as np
 
 
 def polyline(t, n, length, angle):
@@ -84,5 +85,3 @@ polygon_wheel(t, 7, 80)
 die(t)
 
 wait_for_user()
-
-
