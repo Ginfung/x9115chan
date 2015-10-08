@@ -4,4 +4,4 @@ run by:
 ```
 python mws.py
 ```
-![mws](result.tiff)
+![mws](result.png)
