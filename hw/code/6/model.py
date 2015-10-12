@@ -15,21 +15,21 @@ class Has(object):
                goal=None,touch=True):
        i.name,i.lo,i.hi      = name,lo,hi
        i.init,i.goal,i.touch = init,goal,touch
-       
+
     def restrain(i,x):
        if   x < i.lo: return i.lo
        elif x > i.hi: return i.hi
        else: return x
-       
+
     def any(i):
        return within(i.lo,i.hi)
-       
+
     def ok(i,x):
        return i.lo <= x <= i.hi
-       
+
     def __repr__(i):
        return '%s=%s' % (i.name, o(name=i.name,lo=i.lo,hi=i.hi,init=i.init,goal=i.goal,touch=i.touch))
-       
+
 
 class model(object):
     def __init__(i, dec=[], obj=[]):
@@ -52,7 +52,7 @@ class model(object):
                 if t < i.obj[f].lo: i.obj[f].lo = t
                 if t > i.obj[f].hi: i.obj[f].hi = t
         print '===== Base line study done! ===='
-        
+
 
     def genCandidate(i, source = None, what = lambda x:x, reEval = True):
         if source is None:
@@ -71,7 +71,7 @@ class model(object):
         for o in range(i.objNum):
             e += (scores[o] - i.obj[o].lo) / (i.obj[o].hi-i.obj[o].lo)
         return e
-        
+
     def eval(i, c):
         if not c.scores:
             c.scores = [obj(c) for obj in i.objectives()]
@@ -83,4 +83,5 @@ class model(object):
         if c == None: return False
         for x in range(i.decNum):
             if not i.dec[x].ok(c.decs[x]): return False
-        return True
+       return True
+
