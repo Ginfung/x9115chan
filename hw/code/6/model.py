@@ -83,5 +83,4 @@ class model(object):
         if c == None: return False
         for x in range(i.decNum):
             if not i.dec[x].ok(c.decs[x]): return False
-       return True
-
+        return True
