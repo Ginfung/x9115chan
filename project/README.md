@@ -22,7 +22,7 @@ All sourcecode for this project has been published at https://goo.gl/hCCel6
 In this section, I first introduce the software product tree; then introduce some important terms in cross-entropy method.
 ### Feature teee
 See the following example,  
-[feature1](./READMEIMG/eshopmodel.jpg)
+![feature1](./READMEIMG/eshopmodel.jpg)
 
 In this model, E-shop can be divided into 4 sub-feature points: catalogue, payment, security and search. Among them, search is optional, and others are mandatory. In payment sub-feature, it can be bank transfer, credit card or both of them. Security can be high or standard.  
 
@@ -45,12 +45,12 @@ Let X=(x1,x2,...,xn) be a random vector from some space X^n.
 f is some real function on space X^n.  
 The main task for CEM is to find the optimization point x* that minimize/maximize f.  
 The algorithm for CEM are listed as follows.  
-[cem](./READMEIMG/CEM_alg.png)
+![cem](./READMEIMG/CEM_alg.png)
 
 ## 3. CEM4SPL
 ### Feature tree xml parser
 SPLOT(splot-research.org) has a open feature model repository. All models in this project are fetched from this repository. In the SPLOT repository, feature models are expressed in SXFM language. To parse it, I create a python script with the help of regular expression. Like this,  
-```pthon
+```python
 import re
 import xml.etree.ElementTree as ET
 
@@ -99,13 +99,43 @@ By merging the NSGA-II non-dominated sorting into CEM, we can build the model to
 3. Too many evaluations? Yes, this is one of drawbacks for the cross-entropy. This project is just a try for applying this method for the software product line. To reduce the number of evaluation, Joseph Krall et al. raised the GALE model, which can reduce the number of evaluation effectively.
 
 ## 4. Experiment Results
+This model was tested by the E-Shop, Web portal and EIS model. The basic information is listed as follows.
+| model      | Features | Leaves | Constraints |
+|------------|----------|--------|-------------|
+| web portal | 43       | 28     | 6           |
+| E-Shop     | 290      | 194    | 21          |
+| EIS        | 366      | 344    | 192         |
+
+Here is the median of different objectives at each generation. Please note that all the objectives are "less is more". The sampling size was 1000, elite rate is 0.1, max-generation is 30[we will see that CEM4SPL model converge extremely fast!].  
+![eshoprun](./READMEIMG/e_shop_running.png)  
+![webporatalrun](./READMEIMG/web_portal_running.png)  
+![eisrun](./READMEIMG/eis_running.png)
+
+To compare the results with differential evolution, I apply the same initial population with two algorithms. Due to the time limitation, I use the existed implement of differential evolution algorithm. Source code for this can be accessed at https://goo.gl/odiVwK. Here are the comparison results at the converge (I did not set up stopping criteria at the CEM4SPL. As we can see, it converges so quickly).
+
+![hv](./READMEIMG/hv.png)  
+![spread](./READMEIMG/spread.png)
+
 
 ## 5. Conclusion
+From the results at section 4, we can draw a conclusion that:
+1. The CEM4SPL can converge at tens of generations. As a comparison, the Differential evolution did not converge at such rate.
+2. For the hypervolume and spread, DE outperforms CEM4SPL
+
+So, is CEM4SPL a good model? At this time, not yet. However, the CEM4SPL can get feature-rich valid population very quickly. The result for CEM4SPL can be applied to other algorithms as the initial population. Also, to the best of my knowledge, nobody apply the cross-entropy method in this area, this is an first-step attempt for CEM.
 
 ## 6. Threats to Validity
+1. Only three software product model were tested in this project. All of them were manually set up. More large, real model is needed. Such as some commercial projects, Linux models, etc.
+2. Due to the time limitation, the differential evolution algorithm was fetched from other source. The validity for DE is not proved.
+3. Does the first sampling matter for the final results? Should we use the valid features in the first step? This has been proved by the experiment.
+
 
 ## 7. Future Work
 As was discussed in section 3, some other sampling distribution in CEM should be tested in the future.
+
+Will this model work for extremely huge model, such as the Linux model? I did not test this in this project. In the future, I should apply the CEM4SPL for the huge model.
+
+
 
 
 
