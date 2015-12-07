@@ -99,7 +99,8 @@ By merging the NSGA-II non-dominated sorting into CEM, we can build the model to
 3. Too many evaluations? Yes, this is one of drawbacks for the cross-entropy. This project is just a try for applying this method for the software product line. To reduce the number of evaluation, Joseph Krall et al. raised the GALE model, which can reduce the number of evaluation effectively.
 
 ## 4. Experiment Results
-This model was tested by the E-Shop, Web portal and EIS model. The basic information is listed as follows.
+This model was tested by the E-Shop, Web portal and EIS model. The basic information is listed as follows.  
+
 | model      | Features | Leaves | Constraints |
 |------------|----------|--------|-------------|
 | web portal | 43       | 28     | 6           |
